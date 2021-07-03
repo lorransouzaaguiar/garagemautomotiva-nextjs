@@ -3,7 +3,7 @@ import React from 'react'
 import { Flex, Text } from '@chakra-ui/react'
 import { NextPage } from 'next'
 
-import { Header } from '~/components/header'
+import { Header } from '@src/components/header'
 
 const PageComponent: NextPage = () => {
     return (

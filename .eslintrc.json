@@ -1,5 +1,12 @@
 {
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+  },
   "plugins": [
     "react",
     "react-hooks",
@@ -9,29 +16,33 @@
     "import"
   ],
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended",
+    "eslint:recommended",
     // Uncomment the following lines to enable eslint-config-prettier
     // Is not enabled right now to avoid issues with the Next.js repo
     // "prettier",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "prettier/@typescript-eslint"
   ],
   "env": {
-    "es2020": true,
+    "es2021": true,
     "browser": true,
-    "jest": false,
+    "jest": true,
     "node": true
   },
   "rules": {
     "comma-dangle": ["error", "always-multiline"],
     "semi": "off",
     "space-before-function-paren": "off",
-    "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/react-in-jsx-scope": 0,
     "react/display-name": 0,
     "react/prop-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -69,6 +80,50 @@
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
-    ]
+    ],
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling", "object", "index"]],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": [
+          "jest.setup.ts", 
+          "**/*.test.tsx", 
+          "**/*.spec.tsx", 
+          "**/*.test.ts", 
+          "**/*.spec.ts"] }
+    ],
+    "settings": {
+        "react": {
+            "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+        },
+        "import/resolver": {
+            // use <root>/tsconfig.json
+            "typescript": {
+                "project": "."
+            }
+        }
+    }
   }
 }

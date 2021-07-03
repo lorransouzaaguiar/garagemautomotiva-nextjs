@@ -9,7 +9,7 @@ import NextDocument, {
     DocumentContext,
 } from 'next/document'
 
-import { theme } from '~/styles/theme'
+import { theme } from '@src/styles/theme'
 
 class MyDocument extends NextDocument {
     static getInitialProps(ctx: DocumentContext) {
