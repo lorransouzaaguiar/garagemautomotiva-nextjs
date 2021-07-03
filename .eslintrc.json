@@ -1,129 +1,73 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": 12,
-      "sourceType": "module"
-  },
-  "plugins": [
-    "react",
-    "react-hooks",
-    "@typescript-eslint",
-    "prettier",
-    "eslint-plugin-import-helpers",
-    "import"
-  ],
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "airbnb",
-    "plugin:prettier/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
-    "plugin:jsx-a11y/recommended",
-    "eslint:recommended",
-    // Uncomment the following lines to enable eslint-config-prettier
-    // Is not enabled right now to avoid issues with the Next.js repo
-    // "prettier",
-    "prettier/@typescript-eslint"
-  ],
-  "env": {
-    "es2021": true,
-    "browser": true,
-    "jest": true,
-    "node": true
-  },
-  "rules": {
-    "comma-dangle": ["error", "always-multiline"],
-    "semi": "off",
-    "space-before-function-paren": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/display-name": 0,
-    "react/prop-types": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/camelcase": "off",
-    "@typescript-eslint/no-empty-interface": "off",
-    "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/explicit-member-accessibility": 0,
-    "@typescript-eslint/indent": 0,
-    "@typescript-eslint/member-delimiter-style": 0,
-    "@typescript-eslint/no-explicit-any": 0,
-    "@typescript-eslint/no-var-requires": 0,
-    "@typescript-eslint/no-use-before-define": 0,
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        "argsIgnorePattern": "^_"
-      }
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "react",
+      "react-hooks",
+      "@typescript-eslint",
+      "prettier",
+      "eslint-plugin-import-helpers",
+      "import"
     ],
-    "no-console": [
-      "warn",
-      {
-        "allow": ["warn", "error"]
-      }
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      // Uncomment the following lines to enable eslint-config-prettier
+      // Is not enabled right now to avoid issues with the Next.js repo
+      // "prettier",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
     ],
-    "import/no-duplicates": ["error", { "considerQueryString": true }],
-    "import-helpers/order-imports": [
-      "warn",
-      {
-        "newlinesBetween": "always",
-        "groups": [
-          ["/^react/"],
-          ["module"],
-          ["/^~//"],
-          ["parent", "sibling", "index"]
-        ],
-        "alphabetize": { "order": "asc", "ignoreCase": true }
-      }
-    ],
-    "prettier/prettier": "error",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": "off",
-    "import/extensions": "off",
-    "import/no-unresolved": "error",
-    "import/order": [
-      "error",
-      {
-        "groups": ["builtin", "external", "internal", ["parent", "sibling", "object", "index"]],
-        "pathGroups": [
-          {
-            "pattern": "react",
-            "group": "external",
-            "position": "before"
-          }
-        ],
-        "pathGroupsExcludedImportTypes": ["react"],
-        "newlines-between": "never",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
+    "env": {
+      "es6": true,
+      "browser": true,
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "comma-dangle": ["error", "always-multiline"],
+      "semi": "off",
+      "prettier/prettier": "error",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/react-in-jsx-scope": 0,
+      "react/display-name": 0,
+      "react/prop-types": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/camelcase": "off",
+      "@typescript-eslint/no-empty-interface": "off",
+      "@typescript-eslint/explicit-function-return-type": 0,
+      "@typescript-eslint/explicit-member-accessibility": 0,
+      "@typescript-eslint/indent": 0,
+      "@typescript-eslint/member-delimiter-style": 0,
+      "@typescript-eslint/no-explicit-any": 0,
+      "@typescript-eslint/no-var-requires": 0,
+      "@typescript-eslint/no-use-before-define": 0,
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          "argsIgnorePattern": "^_"
         }
-      }
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      { "devDependencies": [
-          "jest.setup.ts", 
-          "**/*.test.tsx", 
-          "**/*.spec.tsx", 
-          "**/*.test.ts", 
-          "**/*.spec.ts"] }
-    ],
-    "settings": {
-        "react": {
-            "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
-        },
-        "import/resolver": {
-            // use <root>/tsconfig.json
-            "typescript": {
-                "project": "."
-            }
+      ],
+      "no-console": [
+        "warn",
+        {
+          "allow": ["warn", "error"]
         }
+      ],
+      "import/no-duplicates": ["error", { "considerQueryString": true }],
+      "import-helpers/order-imports": [
+        "warn",
+        {
+          "newlinesBetween": "always",
+          "groups": [
+            ["/^react/"],
+            ["module"],
+            ["/^~//"],
+            ["parent", "sibling", "index"]
+          ],
+          "alphabetize": { "order": "asc", "ignoreCase": true }
+        }
+      ]
     }
   }
-}

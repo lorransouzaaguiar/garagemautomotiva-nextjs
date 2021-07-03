@@ -10,4 +10,4 @@ const customTheme: Partial<ChakraTheme> = {
     },
 }
 
-export const theme = extendTheme(customTheme)
+export const Theme = extendTheme(customTheme)

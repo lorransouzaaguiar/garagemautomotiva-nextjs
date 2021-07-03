@@ -9,7 +9,7 @@ import NextDocument, {
     DocumentContext,
 } from 'next/document'
 
-import { theme } from '@src/styles/theme'
+import { Theme } from '~/styles/theme'
 
 class MyDocument extends NextDocument {
     static getInitialProps(ctx: DocumentContext) {
@@ -27,7 +27,7 @@ class MyDocument extends NextDocument {
                 </Head>
                 <body>
                     <ColorModeScript
-                        initialColorMode={theme.config.initialColorMode}
+                        initialColorMode={Theme.config.initialColorMode}
                     />
                     <Main />
                     <NextScript />
