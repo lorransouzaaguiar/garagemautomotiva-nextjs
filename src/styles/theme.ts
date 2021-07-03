@@ -1,4 +1,4 @@
-import { extendTheme, ChakraTheme } from '@chakra-ui/react';
+import { extendTheme, ChakraTheme } from '@chakra-ui/react'
 
 const customTheme: Partial<ChakraTheme> = {
     config: {
@@ -8,6 +8,6 @@ const customTheme: Partial<ChakraTheme> = {
         heading: 'Roboto',
         body: 'Roboto',
     },
-};
+}
 
-export const theme = extendTheme(customTheme);
+export const theme = extendTheme(customTheme)

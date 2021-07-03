@@ -19,14 +19,15 @@
     "plugin:prettier/recommended"
   ],
   "env": {
-    "es6": true,
+    "es2020": true,
     "browser": true,
     "jest": false,
     "node": true
   },
   "rules": {
     "comma-dangle": ["error", "always-multiline"],
-    "semi": "error",
+    "semi": "off",
+    "space-before-function-paren": "off",
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",

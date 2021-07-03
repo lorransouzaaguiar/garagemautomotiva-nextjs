@@ -1,19 +1,19 @@
-import React from 'react';
+import React from 'react'
 
-import { ColorModeScript } from '@chakra-ui/react';
+import { ColorModeScript } from '@chakra-ui/react'
 import NextDocument, {
     Html,
     Head,
     Main,
     NextScript,
     DocumentContext,
-} from 'next/document';
+} from 'next/document'
 
-import { theme } from '~/styles/theme';
+import { theme } from '~/styles/theme'
 
 class MyDocument extends NextDocument {
     static getInitialProps(ctx: DocumentContext) {
-        return NextDocument.getInitialProps(ctx);
+        return NextDocument.getInitialProps(ctx)
     }
     render() {
         return (
@@ -33,8 +33,8 @@ class MyDocument extends NextDocument {
                     <NextScript />
                 </body>
             </Html>
-        );
+        )
     }
 }
 
-export default MyDocument;
+export default MyDocument
