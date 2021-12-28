@@ -2,18 +2,16 @@ import { useContext, useEffect } from "react"
 import { Manage } from "../../../components/manage/Manage"
 import { AppContext } from "../../../components/StoreProvider"
 import { Scheduling } from "../domain/Scheduling"
-import { FindAllSchedulingUsecase } from "../domain/usecase/FindAllSchedulingsUsecase"
+import { SchedulingFactory } from "../main/SchedulingFactory"
 
 export default function SchedulingManage() {
-
     const {state, dispatch} = useContext(AppContext)
+    const findAllScheduling = SchedulingFactory.makeFindAllUsecase()
     
     useEffect(() => {
         (async () => {
-            const findAllCustomers = new FindAllSchedulingUsecase('http://localhost:3100/scheduling')
-            const customers = await findAllCustomers.perform()
-            
-            //dispatch({type: 'FINDALL_CUSTOMERS', payload: customers})
+            const schedulings = await findAllScheduling.perform()
+            dispatch({type: 'FINDALL_SCHEDULING', payload: schedulings})
         })()
     }, [])
 
