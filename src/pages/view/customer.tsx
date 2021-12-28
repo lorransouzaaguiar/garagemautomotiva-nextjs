@@ -1,5 +1,5 @@
 import CustomerManage from "~/app/modules/customer/presentation/CustomerManage"
-import Layout from "."
+import Layout from ".."
 
 const CustomerPage = () => {
     return (
