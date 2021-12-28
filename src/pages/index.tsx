@@ -1,19 +1,15 @@
-import React from 'react';
+import { Box, Flex, propNames } from "@chakra-ui/react";
+import { MenuApp } from "~/app/components/Menu";
 
-import { Flex, Text } from '@chakra-ui/react';
-import { NextPage } from 'next';
-
-import { Header } from '~/components/Header';
-
-const PageComponent: NextPage = () => {
-  return (
-    <Flex direction="column">
-      <Header />
-      <Flex>
-        <Text>Home</Text>
-      </Flex>
-    </Flex>
-  );
-};
-
-export default PageComponent;
+export default function Layout ({...props}) {
+    return (
+        <Flex height='100vh'>
+            <Box bg='gray' w='15%'>
+                <MenuApp />
+            </Box>
+            <Box bg='#3C3F41' w='full'>
+                {props.children}
+            </Box>
+        </Flex>
+    )
+}
