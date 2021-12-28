@@ -6,15 +6,15 @@ import { FindAllCustomerUsecase } from "../domain/usecase/FindAllCustomerUsecase
 export class CustomerFactory {
     private static url: string = 'http://localhost:3000/api/customer'
 
-    static makeAddUsecas() : AddCustomerUsecase{
+    static makeAddUsecase() : AddCustomerUsecase{
         return new AddCustomerUsecase(this.url)
     }
 
-    static makeEditUsecas(): EditCustomerUsecase {
+    static makeEditUsecase(): EditCustomerUsecase {
         return new EditCustomerUsecase(this.url)
     }
 
-    static makeDeleteUsecas(): DeleteUsecaseImpl {
+    static makeDeleteUsecase(): DeleteUsecaseImpl {
         return new DeleteUsecaseImpl(this.url)
     }
 
