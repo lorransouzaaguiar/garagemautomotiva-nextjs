@@ -1,20 +1,18 @@
-import { useContext, useEffect } from "react"
+import { useEffect } from "react"
 import { Manage } from "../../../components/manage/Manage"
-import { AppContext } from "../../../components/StoreProvider"
+import { useStore } from "../../shared/store/StoreProvider"
 import { Service } from "../domain/Service"
 import { FindAllServicesUseCase } from "../domain/usecase/FindAllServicesUsecase"
 
 
 export default function ServiceManage() {
-
-    const {state, dispatch} = useContext(AppContext)
+    const {services} = useStore()
+    const findAllServices = new FindAllServicesUseCase('http://localhost:3100/Service')
     
     useEffect(() => {
         (async () => {
-            const findAllServices = new FindAllServicesUseCase('http://localhost:3100/Service')
-            const services = await findAllServices.perform()
-            console.log(services)
-            //dispatch({type: 'FINDALL_ServiceS', payload: Services})
+            const servicesData = await findAllServices.perform()
+            
         })()
     }, [])
 
@@ -27,7 +25,7 @@ export default function ServiceManage() {
             }}
             tableInfo={{
                 nameColumns: ['descição', 'preço'],
-                data : state.services
+                data: services
             }}
             />
     )

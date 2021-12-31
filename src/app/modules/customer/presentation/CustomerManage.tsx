@@ -1,22 +1,26 @@
-import { useContext, useEffect } from "react"
+import { useEffect } from "react"
 import { Manage } from "../../../components/manage/Manage"
-import { AppContext } from "../../../components/StoreProvider"
+import { useDispatch, useStore } from "../../shared/store/StoreProvider"
+import { contextType } from "../../shared/store/StoreReducer"
 import { Customer } from "../domain/Customer"
 import { CustomerFactory } from "../main/CustomerFactory"
+import { customerType } from "./reducer/CustomerReducer"
 
 export default function CustomerManage() {
-    const {state, dispatch} = useContext(AppContext)
-    const findAllCustomerUsecase = CustomerFactory.makeFindAllUsecase()
+    const {customers} = useStore()
+    const dispatch = useDispatch()
+    const findAllCustomerUsecase = CustomerFactory.findAllUsecase()
     
     useEffect(() => {
         (async () => {
-            const customers = await findAllCustomerUsecase.perform()
-            dispatch({type: 'FIND_ALL_CUSTOMERS', payload: customers})
+            const customersData = await findAllCustomerUsecase.perform()
+            dispatch({
+                contextType: contextType.customer, 
+                type: customerType.findAll, 
+                payload: customersData})
             
         })()
     }, [dispatch])
-
-    console.log(state.customers)
 
     return (
         <Manage<Customer> headerInfo={{
@@ -26,7 +30,7 @@ export default function CustomerManage() {
             }}
             tableInfo={{
                 nameColumns: ['nome', 'celular', 'email', 'cpf'],
-                data : state.customers
+                data : customers
             }}/>
     )
 }

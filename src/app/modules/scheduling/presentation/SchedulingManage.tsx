@@ -1,17 +1,17 @@
 import { useContext, useEffect } from "react"
 import { Manage } from "../../../components/manage/Manage"
-import { AppContext } from "../../../components/StoreProvider"
+import { useStore } from "../../shared/store/StoreProvider"
 import { Scheduling } from "../domain/Scheduling"
 import { SchedulingFactory } from "../main/SchedulingFactory"
 
 export default function SchedulingManage() {
-    const {state, dispatch} = useContext(AppContext)
+    const {schedulings} = useStore()
     const findAllScheduling = SchedulingFactory.makeFindAllUsecase()
     
     useEffect(() => {
         (async () => {
             const schedulings = await findAllScheduling.perform()
-            dispatch({type: 'FINDALL_SCHEDULING', payload: schedulings})
+           
         })()
     }, [])
 
@@ -24,7 +24,7 @@ export default function SchedulingManage() {
             }}
             tableInfo={{
                 nameColumns: ['data', 'hora'],
-                data : state.schedulings
+                data : schedulings
             }}
             />
     )
