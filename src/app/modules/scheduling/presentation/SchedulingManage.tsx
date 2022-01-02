@@ -1,5 +1,6 @@
 import { Button, Td, Tr } from "@chakra-ui/react"
 import { useEffect } from "react"
+import TableAction from "~/app/components/manage/TableAction"
 import { Manage } from "../../../components/manage/Manage"
 import { useDispatch, useStore } from "../../shared/store/StoreProvider"
 import { contextType } from "../../shared/store/StoreReducer"
@@ -45,10 +46,7 @@ export default function SchedulingManage() {
                             Object.entries(scheduling).map((value, index) => 
                                 <Td key={index}>{value[1]}</Td>
                             )}
-                        <Td>
-                            <Button borderRadius='50px' w='45px' bg='red' color='white'>R</Button>
-                            <Button borderRadius='50px' w='45px'>E</Button>
-                        </Td>
+                        <TableAction />
                     </Tr>
                 )
             })}

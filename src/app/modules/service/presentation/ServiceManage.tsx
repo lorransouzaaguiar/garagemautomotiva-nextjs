@@ -1,4 +1,6 @@
+import { Td, Tr } from "@chakra-ui/react"
 import { useEffect } from "react"
+import TableAction from "~/app/components/manage/TableAction"
 import { Manage } from "../../../components/manage/Manage"
 import { useDispatch, useStore } from "../../shared/store/StoreProvider"
 import { contextType } from "../../shared/store/StoreReducer"
@@ -35,7 +37,19 @@ export default function ServiceManage() {
                 columnNames: ['descição', 'preço'],
 
             }} >
-
+             {services.map((service, index) => {
+                return (
+                    <Tr key={index}>
+                        {
+                            Object.entries(service).map((value, index) => 
+                                value[0] !== 'id' ? 
+                                    <Td key={index}>{value[1]}</Td> : null )
+                            
+                        }
+                        <TableAction />
+                    </Tr>
+                )
+            })}
         </Manage>
     )
 }
