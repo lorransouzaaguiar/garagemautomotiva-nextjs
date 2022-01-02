@@ -2,7 +2,7 @@ import axios from "axios"
 import { PersistUsecase } from "../../../shared/IUsecase"
 import { Service } from "../Service"
 
-export class EditCustomerUsecase implements PersistUsecase<Service>{
+export class EditServiceUsecase implements PersistUsecase<Service>{
     constructor(private readonly url: string){}
 
     async perform(data: Service): Promise<Service | null> {
