@@ -1,9 +1,24 @@
-import { Button, Td } from "@chakra-ui/react"
+import { Icon, IconButton, Td } from "@chakra-ui/react"
+import DeleteOutlineOutlined from '@material-ui/icons/DeleteOutlineOutlined';
+import EditOutlined from '@material-ui/icons/EditOutlined';
 
 const TableAction = () =>
     <Td>
-        <Button borderRadius='50px' w='45px' bg='red' color='white'>R</Button>
-        <Button borderRadius='50px' w='45px'>E</Button>
+        <IconButton
+            aria-label='delete'
+            variant='outline'
+            border='none'
+            icon={<Icon as={DeleteOutlineOutlined} borderRadius='50px' w='45px' />} 
+            onClick={() => {}}
+            />
+        <IconButton
+            aria-label='edit'
+            variant='outline'
+            border='none'
+            icon={<Icon as={EditOutlined} borderRadius='50px' w='45px' />} 
+            onClick={() => console.log('clicando...')}
+            />
+
     </Td>
 
 export default TableAction
