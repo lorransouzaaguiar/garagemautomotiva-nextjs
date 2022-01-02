@@ -2,14 +2,14 @@
 import { Box, Button, Flex, HStack, Input, Table, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react";
 
 type ManageProps<T> = {
+    children: React.ReactNode
     headerInfo: {
         title: string,
         subTitle: string,
         inputPlaceholder: string
     },
     tableInfo: {
-        nameColumns: string[],
-        data: T[]
+        columnNames: string[]
     }
 } 
 
@@ -67,32 +67,14 @@ export function Manage<T extends {id?: number}>(props: ManageProps<T>) {
                 }}>
                 <Thead >
                     <Tr>
-                        {tableInfo?.nameColumns.map((column, index) => {
+                        {tableInfo?.columnNames.map((column, index) => {
                             return (<Th key={index}>{column}</Th>)
                         })}
                         <Th>Ações</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {tableInfo?.data.map(item => {
-                       
-                        return (
-                            <Tr key={item.id}>
-                                { 
-                                    console.log(Object.entries(item))
-                                /*Object.entries(item).map((value, index) => {
-                                    if(value[0] !== 'id')
-                                        return (<Td key={index}>{value[1]}</Td>)
-                                    return null
-                                })*/}
-                                <Td>
-                                    <Button borderRadius='50px' w='45px' bg='red' color='white'>R</Button>
-                                    <Button borderRadius='50px' w='45px'>E</Button>
-                                </Td>
-                            </Tr>
-                        )
-                    })}
-
+                    {props.children}
                 </Tbody>
             </Table>
         </Box>
