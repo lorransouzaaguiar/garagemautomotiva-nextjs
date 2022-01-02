@@ -1,5 +1,6 @@
 import { customerReducer } from "../../customer/presentation/reducer/CustomerReducer"
 import { schedulingReducer } from "../../scheduling/presentation/SchedulingReducer"
+import { serviceReducer } from "../../service/presentation/ServiceReducer"
 import { Action, InitialState } from "./StoreProvider"
 
 export const contextType = {
@@ -16,6 +17,8 @@ export function storeReducer (state: InitialState, action: Action) : InitialStat
         case contextType.scheduling: 
             return schedulingReducer(state, action)
         break;
+        case contextType.service: 
+            return serviceReducer(state, action)
         default: 
             return state
     }

@@ -4,7 +4,7 @@ import { EditServiceUsecase } from "../domain/usecase/EditServiceUsecase"
 import { FindAllServicesUseCase } from "../domain/usecase/FindAllServicesUsecase"
 
 export class ServiceFactory {
-    private static url: string = 'http://localhost:3100/api/service'
+    private static url: string = 'http://localhost:3000/api/service'
 
     static addUsecase() : AddServiceUsecase{
         return new AddServiceUsecase(this.url)

@@ -1,9 +1,10 @@
+import ServiceManage from "~/app/modules/service/presentation/ServiceManage"
 import Layout from ".."
 
 const ServicePage = () => {
     return (
         <Layout>
-            <h1>Servico</h1>
+            <ServiceManage />
         </Layout>
     )
 }

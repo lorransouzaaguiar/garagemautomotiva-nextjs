@@ -1,9 +1,10 @@
 import { useEffect } from "react"
 import { Manage } from "../../../components/manage/Manage"
 import { useDispatch, useStore } from "../../shared/store/StoreProvider"
+import { contextType } from "../../shared/store/StoreReducer"
 import { Service } from "../domain/Service"
-import { FindAllServicesUseCase } from "../domain/usecase/FindAllServicesUsecase"
 import { ServiceFactory } from "../main/ServiceFactory"
+import { serviceType } from "./ServiceReducer"
 
 
 export default function ServiceManage() {
@@ -14,7 +15,12 @@ export default function ServiceManage() {
     useEffect(() => {
         (async () => {
             const servicesData = await findAllServices.perform()
-            
+            dispatch({
+                contextType: contextType.service,
+                type: serviceType.findAll,
+                payload: servicesData
+            })
+            console.log(services)
         })()
     }, [])
 
