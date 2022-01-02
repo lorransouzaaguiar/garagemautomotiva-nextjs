@@ -1,9 +1,10 @@
+import SchedulingManage from "~/app/modules/scheduling/presentation/SchedulingManage"
 import Layout from ".."
 
 const SchedulingPage = () => {
     return (
         <Layout>
-            <h1>Agendamento</h1>
+            <SchedulingManage />
         </Layout>
     )
 }

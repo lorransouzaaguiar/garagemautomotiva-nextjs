@@ -1,17 +1,25 @@
-import { useContext, useEffect } from "react"
+import { useEffect } from "react"
 import { Manage } from "../../../components/manage/Manage"
-import { useStore } from "../../shared/store/StoreProvider"
+import { useDispatch, useStore } from "../../shared/store/StoreProvider"
+import { contextType } from "../../shared/store/StoreReducer"
 import { Scheduling } from "../domain/Scheduling"
 import { SchedulingFactory } from "../main/SchedulingFactory"
+import { schedulingType } from "./SchedulingReducer"
 
 export default function SchedulingManage() {
     const {schedulings} = useStore()
-    const findAllScheduling = SchedulingFactory.makeFindAllUsecase()
+    const dispatch = useDispatch()
+    const findAllScheduling = SchedulingFactory.findAllUsecase()
     
     useEffect(() => {
         (async () => {
-            const schedulings = await findAllScheduling.perform()
-           
+            const schedulingsData = await findAllScheduling.perform()
+            console.log(schedulingsData)
+            dispatch({
+                contextType: contextType.scheduling,
+                type: schedulingType.findAll,
+                payload: schedulingsData
+            })
         })()
     }, [])
 
@@ -23,7 +31,7 @@ export default function SchedulingManage() {
                 inputPlaceholder: 'Digite o nome do cliente'
             }}
             tableInfo={{
-                nameColumns: ['data', 'hora'],
+                nameColumns: ['data', 'hora', 'aaa', 'bbbb', 'xxxx'],
                 data : schedulings
             }}
             />

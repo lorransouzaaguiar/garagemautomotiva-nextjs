@@ -6,19 +6,19 @@ import { FindAllSchedulingUsecase } from "../domain/usecase/FindAllSchedulingsUs
 export class SchedulingFactory {
     private static url : string = 'http://localhost:3000/api/scheduling'
 
-    static makeAddUsecase() : AddSchedulingUsecase{
+    static addUsecase() : AddSchedulingUsecase{
         return new AddSchedulingUsecase(this.url)
     }
 
-    static makeEditUsecase(): EditSchedulingUsecase {
+    static editUsecase(): EditSchedulingUsecase {
         return new EditSchedulingUsecase(this.url)
     }
 
-    static makeDeleteUsecase(): DeleteUsecaseImpl {
+    static deleteUsecase(): DeleteUsecaseImpl {
         return new DeleteUsecaseImpl(this.url)
     }
 
-    static makeFindAllUsecase() : FindAllSchedulingUsecase{
+    static findAllUsecase() : FindAllSchedulingUsecase{
         return new FindAllSchedulingUsecase(this.url) 
     }
 }

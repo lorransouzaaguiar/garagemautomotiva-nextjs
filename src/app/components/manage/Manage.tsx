@@ -78,11 +78,13 @@ export function Manage<T extends {id?: number}>(props: ManageProps<T>) {
                        
                         return (
                             <Tr key={item.id}>
-                                { Object.entries(item).map((value, index) => {
+                                { 
+                                    console.log(Object.entries(item))
+                                /*Object.entries(item).map((value, index) => {
                                     if(value[0] !== 'id')
                                         return (<Td key={index}>{value[1]}</Td>)
                                     return null
-                                })}
+                                })*/}
                                 <Td>
                                     <Button borderRadius='50px' w='45px' bg='red' color='white'>R</Button>
                                     <Button borderRadius='50px' w='45px'>E</Button>
