@@ -19,11 +19,12 @@ export function Manage<T extends {id?: number}>(props: ManageProps<T>) {
     return (
         <>
           <Flex
+        
             borderBottom="1px solid gray"
             p='10px 30px'
             justify="space-between"
             alignItems="center">
-            <Box>
+            <Box w='250px'>
                 <Text 
                     as='h1' 
                     color="white" 
@@ -43,7 +44,7 @@ export function Manage<T extends {id?: number}>(props: ManageProps<T>) {
         </Flex>
         
         <Box p='10px 30px'>
-            <Table variant='unstyled'
+            <Table variant='unstyled' 
                 sx={{
                     'tr td': {
                         p: '10px 0px',
@@ -59,7 +60,7 @@ export function Manage<T extends {id?: number}>(props: ManageProps<T>) {
                         {tableInfo?.columnNames.map((column, index) => {
                             return (<Th key={index}>{column}</Th>)
                         })}
-                        <Th>Ações</Th>
+                        <Th w='8%'>Ações</Th>
                     </Tr>
                 </Thead>
                 <Tbody>

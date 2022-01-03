@@ -3,21 +3,23 @@ import DeleteOutlineOutlined from '@material-ui/icons/DeleteOutlineOutlined';
 import EditOutlined from '@material-ui/icons/EditOutlined';
 
 const TableAction = () =>
-    <Td>
+    <Td >
         <IconButton
+            size='sm'
             aria-label='delete'
             variant='outline'
             border='none'
-            icon={<Icon as={DeleteOutlineOutlined} borderRadius='50px' w='45px' />} 
+            icon={<Icon as={DeleteOutlineOutlined}   />} 
             onClick={() => {
                
             }}
             />
         <IconButton
+            size='sm'
             aria-label='edit'
             variant='outline'
             border='none'
-            icon={<Icon as={EditOutlined} borderRadius='50px' w='45px' />} 
+            icon={<Icon as={EditOutlined} />} 
             onClick={() => console.log('clicando...')}
             />
 
