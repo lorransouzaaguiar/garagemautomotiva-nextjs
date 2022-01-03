@@ -1,11 +1,3 @@
-import Layout from ".."
-
-const SellPage = () => {
-    return (
-        <Layout>
-          <h1>Venda</h1>
-        </Layout>
-    )
-}
+const SellPage = () =>  <h1>Venda</h1>
 
 export default SellPage

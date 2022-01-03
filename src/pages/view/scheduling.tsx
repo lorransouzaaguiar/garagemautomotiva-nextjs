@@ -1,12 +1,5 @@
 import SchedulingManage from "~/app/modules/scheduling/presentation/SchedulingManage"
-import Layout from ".."
 
-const SchedulingPage = () => {
-    return (
-        <Layout>
-            <SchedulingManage />
-        </Layout>
-    )
-}
+const SchedulingPage = () => <SchedulingManage />
 
 export default SchedulingPage

@@ -1,11 +1,3 @@
-import Layout from ".."
-
-const DashboardPage = () => {
-    return (
-        <Layout>
-            <h1>Dashboard</h1>
-        </Layout>
-    )
-}
+const DashboardPage = () => <h1>Dashboard</h1>
 
 export default DashboardPage

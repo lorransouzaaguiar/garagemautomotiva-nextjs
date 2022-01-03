@@ -1,4 +1,4 @@
-import { ServiceController } from "./serviceController";
+import { ServiceController } from "./ServiceController";
 import { ServiceDAOImpl } from "./ServiceDAOImpl";
 
 export class ServiceFactory {

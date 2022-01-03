@@ -1,11 +1,3 @@
-import Layout from ".."
-
-const ProductPage = () => {
-    return (
-        <Layout>
-            <h1>Produto</h1>
-        </Layout>
-    )
-}
+const ProductPage = () =>  <h1>Produto</h1>
 
 export default ProductPage

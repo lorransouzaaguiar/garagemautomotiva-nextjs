@@ -9,7 +9,9 @@ const TableAction = () =>
             variant='outline'
             border='none'
             icon={<Icon as={DeleteOutlineOutlined} borderRadius='50px' w='45px' />} 
-            onClick={() => {}}
+            onClick={() => {
+               
+            }}
             />
         <IconButton
             aria-label='edit'

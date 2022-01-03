@@ -1,12 +1,5 @@
 import ServiceManage from "~/app/modules/service/presentation/ServiceManage"
-import Layout from ".."
 
-const ServicePage = () => {
-    return (
-        <Layout>
-            <ServiceManage />
-        </Layout>
-    )
-}
+const ServicePage = () => <ServiceManage />
 
 export default ServicePage
