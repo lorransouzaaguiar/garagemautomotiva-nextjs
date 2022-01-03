@@ -13,8 +13,9 @@ export function MenuApp() {
                 ref={ref}
                 minW='155px'
                 minH='25px'
-                p='5px 0 5px 12px'
+                p='5px 0 5px 30px'
                 borderRadius='5px'
+                cursor='pointer'
                 _hover={{
                     bg: '#333FFF'
                 }}
@@ -23,8 +24,8 @@ export function MenuApp() {
     })
 
     return (
-        <Box w="75%">
-            <Text mb='20px' fontSize='1.125em' color='#7D858A'>Menu</Text>
+        <Box  m='70px auto 0 auto'>
+            <Text m='0 0 20px 15px' fontSize='1.125em' color='white'>Menu</Text>
 
             <List spacing="10px" color='white' fontSize='0.875em'>
                 <Link href='/view/dashboard' passHref>

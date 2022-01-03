@@ -8,10 +8,10 @@ type LayoutProps = {
 export default function Layout ({children}: LayoutProps) {
     return (
         <Flex height='100vh'>
-            <Box bg='gray' w='15%'>
+            <Box bg='secondary' w='15%'>
                 <MenuApp />
             </Box>
-            <Box bg='#3C3F41' w='full'>
+            <Box bg='primary' w='full'>
                 {children}
             </Box>
         </Flex>

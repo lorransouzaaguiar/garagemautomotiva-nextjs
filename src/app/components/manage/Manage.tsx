@@ -37,20 +37,9 @@ export function Manage<T extends {id?: number}>(props: ManageProps<T>) {
             </Box>
             <HStack spacing="10px">
                 <Input placeholder={headerInfo.inputPlaceholder} minW="190px" minH="33px" />
-                <Button
-                    bg="#333FFF"
-                    color='white'
-                    minW="80px"
-                    minH='33px'
-                    fontSize="0.875em"
-                >Pesquisar</Button>
+                <Button size='md' variant='solid'>Pesquisar</Button>
             </HStack>
-            <Button
-                bg="#333FFF"
-                color='white'
-                minW="80px"
-                minH='33px'
-                fontSize="0.875em">Novo</Button>
+            <Button size='md' variant='solid'>Novo</Button>
         </Flex>
         
         <Box p='10px 30px'>
@@ -58,11 +47,11 @@ export function Manage<T extends {id?: number}>(props: ManageProps<T>) {
                 sx={{
                     'tr td': {
                         p: '10px 0px',
-                        color: '#7D858A'
+                        color: 'secondary'
                     },
                     'tr th': {
                         p: '10px 0px',
-                        color: '#7D858A'
+                        color: 'secondary'
                     }
                 }}>
                 <Thead >

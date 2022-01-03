@@ -10,7 +10,6 @@ export class ServiceDAOImpl implements ServiceDAO {
 
         try {
             const [rows]: any[] = await con.execute('select * from servico')
-            console.log(rows)
             for (const r of rows) {
                 const service = Service.toDomain(r)
                 services.push(service)
