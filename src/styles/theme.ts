@@ -9,8 +9,13 @@ const customTheme: Partial<ChakraTheme> = {
     body: 'Roboto',
   },
   colors: {
-    primary: '#3C3F41',
-    secondary: '#7D858A'
+    c11: '#131313',
+    c7: '#676767',
+    c3: '#BFBFBF',
+    w: '#FFFFFF',
+    p12: '#514EE5',
+    comp1: '#CB524A',
+    comp2: '#D2AE68'
   },
   components: {
     Button: {
